@@ -1,8 +1,6 @@
 name: Test tracker
 
-on:
-  schedule:
-    - cron: '0 0 1 * *'
+on: [workflow_dispatch]
 
 jobs:
   test_issue_tracker:
@@ -14,17 +12,17 @@ jobs:
     - name: Track issues
       id: tracking
       uses: ./
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-    - name: Git commit
-      run: |
-        # git commit if there's any change
-        if test -n "$(git status --porcelain 2>/dev/null)"; then
-            git config --global user.email "idegorepl@gmail.com"
-            git config --global user.name "ActionCloud Bot"
-            git add .
-            git commit -m "Update forks data"
-            git push
-        fi
+#       with:
+#         github-token: ${{ secrets.GITHUB_TOKEN }}
+#     - name: Git commit
+#       run: |
+#         # git commit if there's any change
+#         if test -n "$(git status --porcelain 2>/dev/null)"; then
+#             git config --global user.email "idegorepl@gmail.com"
+#             git config --global user.name "ActionCloud Bot"
+#             git add .
+#             git commit -m "Update forks data"
+#             git push
+#         fi
     - name: Check output
       run: echo '${{ steps.tracking.outputs.actioncloud-badge }}'
