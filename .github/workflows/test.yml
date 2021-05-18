@@ -12,8 +12,8 @@ jobs:
     - name: Track issues
       id: tracking
       uses: ./
-#       with:
-#         github-token: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
 #     - name: Git commit
 #       run: |
 #         # git commit if there's any change
