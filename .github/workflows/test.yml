@@ -27,7 +27,6 @@ jobs:
             git merge newBranch
             git push origin master
             git branch -d newBranch
-            git push 
         fi
     - name: Check output
       run: echo '${{ steps.tracking.outputs.actioncloud-badge }}'
