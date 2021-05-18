@@ -22,7 +22,7 @@ jobs:
             git config --global user.name "ActionCloud Bot"
             git add .
             git commit -m "Update forks data"
-            git push origin master
+            git push 
         fi
     - name: Check output
       run: echo '${{ steps.tracking.outputs.actioncloud-badge }}'
