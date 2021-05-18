@@ -13,7 +13,7 @@ jobs:
       id: tracking
       uses: ./
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        github-token: ${{ secrets.TOKEN }}
 #     - name: Git commit
 #       run: |
 #         # git commit if there's any change
