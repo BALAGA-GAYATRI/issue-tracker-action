@@ -14,15 +14,15 @@ jobs:
       uses: ./
       with:
         github-token: ${{ secrets.TOKEN }}
-#     - name: Git commit
-#       run: |
-#         # git commit if there's any change
-#         if test -n "$(git status --porcelain 2>/dev/null)"; then
-#             git config --global user.email "idegorepl@gmail.com"
-#             git config --global user.name "ActionCloud Bot"
-#             git add .
-#             git commit -m "Update forks data"
-#             git push
-#         fi
+    - name: Git commit
+      run: |
+        # git commit if there's any change
+        if test -n "$(git status --porcelain 2>/dev/null)"; then
+            git config --global user.email "idegorepl@gmail.com"
+            git config --global user.name "ActionCloud Bot"
+            git add .
+            git commit -m "Update forks data"
+            git push
+        fi
     - name: Check output
       run: echo '${{ steps.tracking.outputs.actioncloud-badge }}'
