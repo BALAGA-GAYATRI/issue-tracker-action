@@ -22,6 +22,11 @@ jobs:
             git config --global user.name "ActionCloud Bot"
             git add .
             git commit -m "Update forks data"
+            git checkout -b newBranch 
+            git checkout master
+            git merge newBranch
+            git push origin master
+            git branch -d newBranch
             git push 
         fi
     - name: Check output
