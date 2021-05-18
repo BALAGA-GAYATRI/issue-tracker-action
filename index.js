@@ -19,7 +19,7 @@ fs.readFile(dataFilePath, 'utf8', (err, data) => {
 });
 
 const githubToken = core.getInput('github-token');
-const repo = process.env.GITHUB_REPOSITORY;
+const repo =  "Azure/login"; //process.env.GITHUB_REPOSITORY;
 const repoInfo = repo.split("/");
 const repoOwner = repoInfo[0];
 const repoName = repoInfo[1];
